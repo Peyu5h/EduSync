@@ -7,6 +7,7 @@ import {
   MdOutlineAssignment,
   MdOutlineChatBubbleOutline,
   MdOutlinePoll,
+  MdOutlineQuiz,
   MdOutlineRecommend,
 } from "react-icons/md";
 
@@ -51,6 +52,13 @@ export const NavItems = () => {
       href: "/recommendations",
       icon: <MdOutlineRecommend size={20} />,
       active: isNavItemActive("/recommendations"),
+      position: "top",
+    },
+    {
+      name: "Quizzes",
+      href: "/quizzes",
+      icon: <MdOutlineQuiz size={20} />,
+      active: isNavItemActive("/quizzes"),
       position: "top",
     },
 

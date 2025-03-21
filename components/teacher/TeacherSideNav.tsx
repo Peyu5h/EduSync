@@ -67,6 +67,12 @@ const TeacherSideNav = () => {
       active: pathname === "/teacher/assignments",
     },
     {
+      href: "/teacher/quizzes",
+      label: "Quizzes",
+      icon: <BookOpen className="h-4 w-4" />,
+      active: pathname === "/teacher/quizzes",
+    },
+    {
       href: "/teacher/chats",
       label: "Chats",
       icon: <MessageSquare className="h-4 w-4" />,

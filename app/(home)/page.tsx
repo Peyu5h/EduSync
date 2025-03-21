@@ -2,6 +2,7 @@
 
 import { useAtom } from "jotai";
 import React, { useEffect, useCallback } from "react";
+import { useSelector } from "react-redux";
 import SubjectCardLoader from "~/components/Loaders/SubjectCardLoader";
 import SubjectCard from "~/components/SubjectCard";
 import { sidebarExpandedAtom } from "~/context/atom";

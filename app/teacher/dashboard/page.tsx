@@ -15,6 +15,7 @@ import { Users, BookOpen, BarChart, CalendarClock } from "lucide-react";
 
 export default function TeacherDashboardPage() {
   const user = useSelector((state: any) => state.user.user);
+  console.log(user);
   const taughtClasses = user?.taughtClasses || [];
 
   return (

@@ -14,10 +14,11 @@ const LoginForm = () => {
   const [showPass, setShowPass] = useState(false);
   const router = useRouter();
   const [guestLoader, setGuestLoader] = useState(false);
-
+  const [teacherLoader, setTeacherLoader] = useState(false);
   const { mutate: login, error, isPending } = useLogin();
 
   const guestInfo = { email: "123@gmail.com", password: "12345678" };
+  const teacherInfo = { email: "pranali@gmail.com", password: "12345678" };
 
   const formik = useFormik({
     initialValues: {
@@ -61,6 +62,25 @@ const LoginForm = () => {
         console.log("Login successful, user data:", userData);
         console.log("User role:", userData.role);
         setGuestLoader(false);
+
+        // Manually redirect based on role
+        if (userData.role === "CLASS_TEACHER") {
+          router.push("/teacher");
+        } else {
+          router.push("/");
+        }
+      },
+    });
+  };
+
+  const handleTeacherLogin = () => {
+    setTeacherLoader(true);
+
+    login(teacherInfo, {
+      onSuccess: (userData) => {
+        console.log("Login successful, user data:", userData);
+        console.log("User role:", userData.role);
+        setTeacherLoader(false);
 
         // Manually redirect based on role
         if (userData.role === "CLASS_TEACHER") {
@@ -123,7 +143,23 @@ const LoginForm = () => {
               onClick={handleGuestLogin}
               disabled={isPending}
             >
-              Continue as Guest
+              Continue as Student
+            </Button>
+          )}
+
+          {teacherLoader ? (
+            <Button className="w-full py-6" disabled>
+              <Loader2 className="mr-2 size-4 animate-spin" />
+              Please wait
+            </Button>
+          ) : (
+            <Button
+              className="w-full py-6"
+              type="button"
+              onClick={handleTeacherLogin}
+              disabled={isPending}
+            >
+              Continue as Teacher
             </Button>
           )}
 
