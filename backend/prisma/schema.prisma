@@ -27,6 +27,7 @@ model User {
   wrongAnswers   WrongAnswer[]
   quizAttempts   StudentQuizAttempt[]
   createdQuizzes Quiz[]
+  streak         Json? // Streak data including currentStreak, longestStreak, lastActiveDate, and activityLog
 }
 
 model Class {

@@ -62,12 +62,12 @@ export const NavItems = () => {
       position: "top",
     },
 
-    {
-      name: "Settings",
-      href: "/settings",
-      icon: <Settings size={18} />,
-      active: isNavItemActive("/settings"),
-      position: "bottom",
-    },
+    // {
+    //   name: "Settings",
+    //   href: "/settings",
+    //   icon: <Settings size={18} />,
+    //   active: isNavItemActive("/settings"),
+    //   position: "bottom",
+    // },
   ];
 };
