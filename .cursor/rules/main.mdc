@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Keep the ai simple,
+do not use jwt as middleware and keep no security since its an personal app so dont overcomplicate things
+use ~/* import primitive instead of @/* and use ny from ~/lib/utils instead of cn from @libs/utils for shadcn
