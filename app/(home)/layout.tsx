@@ -8,7 +8,7 @@ import { useCourses } from "~/hooks/useGetCourses";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | ACADEMIA",
+    template: "%s | EDUSYNC",
     default: "HOME",
   },
 };

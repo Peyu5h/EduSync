@@ -27,6 +27,7 @@ model User {
   wrongAnswers   WrongAnswer[]
   quizAttempts   StudentQuizAttempt[]
   createdQuizzes Quiz[]
+  roadmaps       Roadmap[]
   streak         Json? // Streak data including currentStreak, longestStreak, lastActiveDate, and activityLog
 }
 
@@ -231,6 +232,31 @@ model StudentQuestionAnswer {
   answeredAt       DateTime           @default(now())
 }
 
+model Roadmap {
+  id          String         @id @default(cuid()) @map("_id")
+  userId      String
+  user        User           @relation(fields: [userId], references: [id])
+  title       String
+  description String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  topics      RoadmapTopic[]
+  isArchived  Boolean        @default(false)
+}
+
+model RoadmapTopic {
+  id          String      @id @default(cuid()) @map("_id")
+  roadmapId   String
+  roadmap     Roadmap     @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  targetDate  DateTime
+  status      TopicStatus @default(NOT_STARTED)
+  resources   Json? // Array of resources (videos, articles, books, etc.)
+  priority    Int         @default(1)
+  order       Int         @default(0)
+}
+
 enum UserRole {
   STUDENT
   ADMIN
@@ -249,4 +275,10 @@ enum AttemptStatus {
   IN_PROGRESS
   COMPLETED
   TIMED_OUT
+}
+
+enum TopicStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
 }

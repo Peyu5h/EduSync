@@ -10,6 +10,7 @@ import {
   MdOutlineQuiz,
   MdOutlineRecommend,
 } from "react-icons/md";
+import { SiRoadmapdotsh } from "react-icons/si";
 
 export const NavItems = () => {
   const pathname = usePathname();
@@ -62,12 +63,12 @@ export const NavItems = () => {
       position: "top",
     },
 
-    // {
-    //   name: "Settings",
-    //   href: "/settings",
-    //   icon: <Settings size={18} />,
-    //   active: isNavItemActive("/settings"),
-    //   position: "bottom",
-    // },
+    {
+      name: "Roadmap",
+      href: "/roadmap",
+      icon: <SiRoadmapdotsh size={18} />,
+      active: isNavItemActive("/roadmap"),
+      position: "bottom",
+    },
   ];
 };

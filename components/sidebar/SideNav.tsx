@@ -101,7 +101,7 @@ export default function SideNav() {
           <div className="relative mt-4 pb-2">
             <div className="my-4 mb-6 flex items-center justify-center">
               {isSidebarExpanded ? (
-                <h1 className="font-robson text-5xl text-pri">ACADEMIA</h1>
+                <h1 className="font-robson text-5xl text-pri">EDUSYNC</h1>
               ) : (
                 <h1 className="font-robson text-5xl text-pri">A</h1>
               )}

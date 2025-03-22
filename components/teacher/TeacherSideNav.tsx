@@ -83,7 +83,7 @@ const TeacherSideNav = () => {
   return (
     <div className="flex h-full min-w-[260px] flex-col space-y-2 overflow-hidden rounded-r-md bg-bground2 p-3 pb-8 shadow-sm backdrop-blur-md">
       <div className="flex items-center px-3 py-2">
-        <h1 className="mx-auto font-robson text-5xl text-pri">ACADEMIA</h1>
+        <h1 className="mx-auto font-robson text-5xl text-pri">EDUSYNC</h1>
       </div>
       <div className="my-2 h-[1px] w-full bg-border" />
       <div className="flex flex-1 flex-col gap-1">
